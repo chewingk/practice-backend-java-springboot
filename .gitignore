@@ -1,3 +1,9 @@
 # Default ignored files
 /shelf/
-/.idea/workspace.xml
+.idea
+target/
+
+**/.vscode
+**/mvnw
+**/mvnw.cmd
+**/.mvn
