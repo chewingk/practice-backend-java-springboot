@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.chewingk.mall</groupId>
-	<artifactId>memeber</artifactId>
+	<artifactId>member</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>memeber</name>
 	<description>Demo project for Spring Boot</description>

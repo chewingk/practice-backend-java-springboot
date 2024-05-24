@@ -12,9 +12,9 @@
     <modules>
         <module>product</module>
         <module>coupon</module>
-        <module>memeber</module>
+        <module>member</module>
         <module>order</module>
-        <module>stock</module>
+        <module>warehouse</module>
         <module>renren-fast</module>
         <module>renren-generator</module>
     </modules>
