@@ -4,12 +4,10 @@ import java.util.Arrays;
 import java.util.Map;
 
 // import org.apache.shiro.authz.annotation.RequiresPermissions;
+import com.chewingk.mall.member.dao.feign.ProductFeignClient;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.chewingk.mall.member.entity.MemberEntity;
 import com.chewingk.mall.member.service.MemberService;
@@ -27,9 +25,17 @@ import com.chewingk.common.utils.R;
  */
 @RestController
 @RequestMapping("member/member")
+@RequiredArgsConstructor
 public class MemberController {
-    @Autowired
-    private MemberService memberService;
+    private final MemberService memberService;
+    private final ProductFeignClient productFeignClient;
+
+
+    @GetMapping("/sku/{id}")
+    public R getSku(@PathVariable("id") Long id) {
+        R info = productFeignClient.info(id);
+        return R.ok().put("Member", info);
+    }
 
     /**
      * 列表
