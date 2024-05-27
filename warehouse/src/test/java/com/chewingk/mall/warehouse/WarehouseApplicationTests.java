@@ -1,10 +1,10 @@
-package com.chewingk.mall.stock;
+package com.chewingk.mall.warehouse;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class StockApplicationTests {
+class WarehouseApplicationTests {
 
 	@Test
 	void contextLoads() {
