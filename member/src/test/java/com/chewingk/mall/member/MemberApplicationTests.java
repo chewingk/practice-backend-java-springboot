@@ -1,10 +1,10 @@
-package com.chewingk.mall.memeber;
+package com.chewingk.mall.member;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MemeberApplicationTests {
+class MemberApplicationTests {
 
 	@Test
 	void contextLoads() {
