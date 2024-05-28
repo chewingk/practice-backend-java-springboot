@@ -7,6 +7,7 @@ import java.util.Map;
 import com.chewingk.mall.member.dao.feign.ProductFeignClient;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import com.chewingk.mall.member.entity.MemberEntity;
@@ -29,6 +30,16 @@ import com.chewingk.common.utils.R;
 public class MemberController {
     private final MemberService memberService;
     private final ProductFeignClient productFeignClient;
+
+    @Value("${test.name}")
+    private String name;
+    @Value("${test.gender}")
+    private String gender;
+
+    @GetMapping("/config")
+    public R testConfigFromNacos() {
+        return R.ok().put("name", name).put("gender", gender);
+    }
 
 
     @GetMapping("/sku/{id}")

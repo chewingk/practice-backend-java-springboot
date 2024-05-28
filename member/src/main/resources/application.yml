@@ -16,6 +16,12 @@ spring:
     nacos:
       discovery:
         server-addr: localhost:8848
+      config:
+        group: DEFAULT_GROUP
+        server-addr: localhost:8848
+  config:
+    import:
+      - nacos:member.properties
 
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml
